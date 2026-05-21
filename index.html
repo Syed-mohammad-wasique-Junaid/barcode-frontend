@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Canteen Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="theme-dark">
+
+    <!-- Background Effects -->
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div>
+                <h1>🍽 Smart Canteen Dashboard</h1>
+                <p class="subtitle">
+                    Real-time occupancy monitoring system
+                </p>
+            </div>
+
+            <div class="header-controls">
+
+                <select id="themeSelector">
+                    <option value="theme-dark">🌙 Dark</option>
+                    <option value="theme-neon">⚡ Neon</option>
+                    <option value="theme-sunset">🔥 Sunset</option>
+                </select>
+
+                <div class="connection-status" id="connection-status">
+                    <span class="status-dot"></span>
+                    Connecting...
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- LIVE STATS -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-title">
+                    Current Occupancy
+                </div>
+
+                <div class="stat-value" id="current-stat">
+                    0
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-title">
+                    Peak Occupancy
+                </div>
+
+                <div class="stat-value" id="peak-stat">
+                    0
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-title">
+                    Total Scans
+                </div>
+
+                <div class="stat-value" id="scan-stat">
+                    0
+                </div>
+            </div>
+
+        </section>
+
+        <!-- MAIN OCCUPANCY CARD -->
+        <section class="main-card">
+
+            <div class="occupancy-ring">
+
+                <div class="inner-ring">
+
+                    <div id="occ-box">
+                        0
+                    </div>
+
+                    <div class="ring-label">
+                        People Inside
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="status-text" class="status-low">
+                🟢 Less Crowded
+            </div>
+
+            <div id="last-updated">
+                Last Updated: --
+            </div>
+
+        </section>
+
+        <!-- SCANNER STATUS -->
+        <section class="section-card">
+
+            <h2>
+                📡 Scanner Status
+            </h2>
+
+            <div class="scanner-status" id="scanner-status">
+                Waiting for scan...
+            </div>
+
+        </section>
+
+        <!-- LAST SCAN -->
+        <section class="section-card">
+
+            <h2>
+                🧾 Last Scan
+            </h2>
+
+            <div class="scan-grid">
+
+                <div class="scan-item">
+                    <span class="label">
+                        Code
+                    </span>
+
+                    <span id="last-code">
+                        --
+                    </span>
+                </div>
+
+                <div class="scan-item">
+                    <span class="label">
+                        Action
+                    </span>
+
+                    <span id="last-action">
+                        --
+                    </span>
+                </div>
+
+                <div class="scan-item">
+                    <span class="label">
+                        Time
+                    </span>
+
+                    <span id="last-scan-time">
+                        --
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ACTIVITY FEED -->
+        <section class="section-card">
+
+            <h2>
+                ⚡ Recent Activity
+            </h2>
+
+            <div id="activity-feed">
+
+                <div class="empty-state">
+                    No scans yet
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
